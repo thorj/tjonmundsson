@@ -1,38 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Black &amp; Light</title>
-    <link>https://www.example.com/categories/</link>
-    <description>Recent content in Categories on Black &amp; Light</description>
+    <title>Categories on Thorarinn Jonmundsson</title>
+    <link>https://www.tjonmundsson.com/categories/</link>
+    <description>Recent content in Categories on Thorarinn Jonmundsson</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Tue, 01 Dec 2020 21:13:14 -0500</lastBuildDate><atom:link href="https://www.example.com/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>R</title>
-      <link>https://www.example.com/categories/r/</link>
-      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
-      
-      <guid>https://www.example.com/categories/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Development</title>
-      <link>https://www.example.com/categories/development/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.example.com/categories/development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>golang</title>
-      <link>https://www.example.com/categories/golang/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.example.com/categories/golang/</guid>
-      <description></description>
-    </item>
-    
+    <language>en</language><atom:link href="https://www.tjonmundsson.com/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

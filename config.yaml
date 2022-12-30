@@ -1,6 +1,6 @@
 baseurl: https://www.tjonmundsson.com
-title: Black & Light
-author: David Hamp-Gonsalves
+title: Thorarinn Jonmundsson
+author: Thorarinn Jonmundsson
 canonifyurls: yes
 languagecode: en
 theme: hugo-black-and-light-theme
@@ -8,15 +8,15 @@ pygmentsstyle: bw
 pygmentscodefences: yes
 params:
   disableWebFonts: no
-  sitename: Black & Light
+  sitename: Thorarinn Jonmundsson
 menu:
   main:
     - name: About
-      url: https://github.com/davidhampgonsalves/hugo-black-and-light-theme
-    - name: Projects
-      url: https://github.com/davidhampgonsalves/hugo-black-and-light-theme
-    - name: Resume
-      url: https://github.com/davidhampgonsalves/hugo-black-and-light-theme
+      url: "/about/"
+    - name: GitHub
+      url: https://github.com/thorj
+    - name: Publications
+      url: https://orcid.org/0000-0001-9158-0087
 
 markup:
   goldmark:
