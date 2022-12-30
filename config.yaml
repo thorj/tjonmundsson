@@ -13,8 +13,8 @@ menu:
   main:
     - name: About
       url: "/about/"
-    - name: GitHub
-      url: https://github.com/thorj
+    - name: CV
+      url: 
     - name: Publications
       url: https://orcid.org/0000-0001-9158-0087
 
