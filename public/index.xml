@@ -8,25 +8,21 @@
     <language>en</language>
     <lastBuildDate>Thu, 29 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.tjonmundsson.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>About</title>
+      <link>https://www.tjonmundsson.com/about/</link>
+      <pubDate>Fri, 30 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.tjonmundsson.com/about/</guid>
+      <description>This is my personal website where I blog about stuff that I&amp;rsquo;m interested in.</description>
+    </item>
+    
+    <item>
       <title>Test post</title>
       <link>https://www.tjonmundsson.com/post/2022-12-29-test-post/</link>
       <pubDate>Thu, 29 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.tjonmundsson.com/post/2022-12-29-test-post/</guid>
       <description>This is a test post Does it work?</description>
-    </item>
-    
-    <item>
-      <title>About Hugo</title>
-      <link>https://www.tjonmundsson.com/about/</link>
-      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.tjonmundsson.com/about/</guid>
-      <description>Hugo is a static site engine written in Go.
-It makes use of a variety of open source projects including:
-Cobra Viper J Walter Weatherman Cast Learn more and contribute on GitHub.
-Setup Some fun facts about Hugo:
-Built in Go Loosely inspired by Jekyll Primarily developed by spf13 on the train while commuting to and from Manhattan. Coded in Vim using spf13-vim Have questions or suggestions? Feel free to open an issue on GitHub or ask me on Twitter.</description>
     </item>
     
   </channel>
