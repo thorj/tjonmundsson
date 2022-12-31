@@ -1,22 +1,8 @@
-baseurl: https://www.tjonmundsson.com
-title: Thorarinn Jonmundsson
-author: Thorarinn Jonmundsson
-canonifyurls: yes
-languagecode: en
-theme: hugo-black-and-light-theme
-pygmentsstyle: bw
-pygmentscodefences: yes
-params:
-  disableWebFonts: no
-  sitename: Thorarinn Jonmundsson
-menu:
-  main:
-    - name: About
-      url: "/about/"
-    - name: CV
-      url: 
-    - name: Publications
-      url: https://orcid.org/0000-0001-9158-0087
+theme: "hugo-theme-texify"
+baseURL: http://example.org/
+languageCode: en-us
+title: My New Hugo Site
+math: true
 
 markup:
   goldmark:
