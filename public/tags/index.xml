@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on My New Hugo Site</title>
-    <link>/tags/</link>
-    <description>Recent content in Tags on My New Hugo Site</description>
+    <title>Tags on Thorarinn Jonmundsson</title>
+    <link>https://tjonmundsson.com/tags/</link>
+    <description>Recent content in Tags on Thorarinn Jonmundsson</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 31 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <managingEditor>t.jonmundsson@gmail.com (Thorarinn Jonmundsson)</managingEditor>
+    <webMaster>t.jonmundsson@gmail.com (Thorarinn Jonmundsson)</webMaster>
+    <lastBuildDate>Sat, 31 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://tjonmundsson.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>test</title>
-      <link>/tags/test/</link>
+      <link>https://tjonmundsson.com/tags/test/</link>
       <pubDate>Sat, 31 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/test/</guid>
+      <author>t.jonmundsson@gmail.com (Thorarinn Jonmundsson)</author>
+      <guid>https://tjonmundsson.com/tags/test/</guid>
       
       <description></description>
       
@@ -20,10 +22,10 @@
     
     <item>
       <title>test2</title>
-      <link>/tags/test2/</link>
+      <link>https://tjonmundsson.com/tags/test2/</link>
       <pubDate>Sat, 31 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/test2/</guid>
+      <author>t.jonmundsson@gmail.com (Thorarinn Jonmundsson)</author>
+      <guid>https://tjonmundsson.com/tags/test2/</guid>
       
       <description></description>
       
@@ -31,10 +33,10 @@
     
     <item>
       <title>index</title>
-      <link>/tags/index/</link>
+      <link>https://tjonmundsson.com/tags/index/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/index/</guid>
+      <author>t.jonmundsson@gmail.com (Thorarinn Jonmundsson)</author>
+      <guid>https://tjonmundsson.com/tags/index/</guid>
       
       <description></description>
       

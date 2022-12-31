@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>index on My New Hugo Site</title>
-    <link>/tags/index/</link>
-    <description>Recent content in index on My New Hugo Site</description>
+    <title>index on Thorarinn Jonmundsson</title>
+    <link>https://tjonmundsson.com/tags/index/</link>
+    <description>Recent content in index on Thorarinn Jonmundsson</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="/tags/index/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <managingEditor>t.jonmundsson@gmail.com (Thorarinn Jonmundsson)</managingEditor>
+    <webMaster>t.jonmundsson@gmail.com (Thorarinn Jonmundsson)</webMaster><atom:link href="https://tjonmundsson.com/tags/index/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Posts</title>
-      <link>/post/</link>
+      <link>https://tjonmundsson.com/post/</link>
       <pubDate>Sat, 31 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/post/</guid>
+      <author>t.jonmundsson@gmail.com (Thorarinn Jonmundsson)</author>
+      <guid>https://tjonmundsson.com/post/</guid>
       
       <description></description>
       

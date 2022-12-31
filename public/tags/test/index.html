@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   
-  <meta name="author" content="">
+  <meta name="author" content="Thorarinn Jonmundsson">
 
   
   
@@ -15,7 +15,7 @@
   
 
   
-  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="https://tjonmundsson.com/favicon.ico">
 
   
   
@@ -24,31 +24,55 @@
 
   
   
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css"
+  integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js"
+  integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js"
+  integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '\\[', right: '\\]', display: true },
+        { left: '$', right: '$', display: false },
+        { left: '\\(', right: '\\)', display: false }
+      ],
+      ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code', 'option'],
+      throwOnError: false
+    });
+  });
+</script>
+
+
+  
 
   
   <meta property="og:title" content="test" />
 <meta property="og:description" content="an example site for hugo theme TeXify" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="/tags/test/" />
+<meta property="og:url" content="https://tjonmundsson.com/tags/test/" />
 
 
   
-  <link rel="canonical" href="/tags/test/">
+  <link rel="canonical" href="https://tjonmundsson.com/tags/test/">
 
   
   
-  <link rel="alternate" type="application/rss+xml" href="/tags/test/index.xml" title="My New Hugo Site" />
+  <link rel="alternate" type="application/rss+xml" href="https://tjonmundsson.com/tags/test/index.xml" title="Thorarinn Jonmundsson" />
   
   <meta itemprop="name" content="test">
 <meta itemprop="description" content="an example site for hugo theme TeXify">
 
   
-  <link media="screen" rel="stylesheet" href='/css/common.css'>
-  <link media="screen" rel="stylesheet" href='/css/content.css'>
+  <link media="screen" rel="stylesheet" href='https://tjonmundsson.com/css/common.css'>
+  <link media="screen" rel="stylesheet" href='https://tjonmundsson.com/css/content.css'>
 
   
   
-  <title>test - My New Hugo Site</title>
+  <title>test - Thorarinn Jonmundsson</title>
   
 
   
@@ -58,7 +82,7 @@
 
 
   
-<link rel="stylesheet" href='/css/list.css'>
+<link rel="stylesheet" href='https://tjonmundsson.com/css/list.css'>
 
 </head>
 
@@ -66,13 +90,13 @@
   <div id="wrapper">
     <header id="header">
   <h1>
-    <a href="/">My New Hugo Site</a>
+    <a href="https://tjonmundsson.com">Thorarinn Jonmundsson</a>
   </h1>
 
   <nav>
     
     <span class="nav-bar-item">
-      <a class="link" href="/">Post</a>
+      <a class="link" href="/">Home</a>
     </span>
     
     <span class="nav-bar-item">
@@ -109,7 +133,7 @@
 
     <footer id="footer">
   <div>
-    <span>© 2019</span> - <span>2022</span>
+    <span>© 2022</span> - <span>2022</span>
   </div>
 
   <div>
@@ -120,10 +144,8 @@
   </div>
 
   <div class="footnote">
-    <span>Follow me on <a class=link href=https://github.com/queensferryme>GitHub</a>,
-<a class=link href=https://twitter.com/queensferryme>Twitter</a> or
-<a class=link href=/index.xml>RSS</a> |
-<a class=link href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh target=_blank rel=noopener>CC BY-NC-SA 4.0</a>
+    <span>Follow me on <a class=link href=https://github.com>GitHub</a> or
+<a class=link href=https://orcid.org/0000-0001-9158-0087>ORCID</a>
 </span>
   </div>
 </footer>
