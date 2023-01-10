@@ -43,6 +43,11 @@ identifier = "about"
 name = "About"
 url = "/about/"
 weight = 3
+[[menu.main]]
+identifier = "vitae"
+name = "CV"
+url = "/vitae/"
+weight = 4
 
 # https://gohugo.io/content-management/taxonomies#configure-taxonomies
 [taxonomies]

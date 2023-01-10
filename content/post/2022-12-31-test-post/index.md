@@ -1,7 +1,7 @@
 ---
 title: Test post
 author: Thorarinn Jonmundsson
-date: '2022-12-31'
+date: '2022-12-29'
 slug: []
 categories: []
 tags: [test, test2]
@@ -24,5 +24,9 @@ This is a code environment but it doesn't run anything.
 ```
 
 Inline `code does it` work.
+
+**Theorem:** Testest.
+
+*Proof:* So and so.
 
 Fin.
