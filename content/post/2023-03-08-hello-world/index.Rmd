@@ -1,0 +1,21 @@
+---
+title: hello world
+author: Thorarinn Jonmundsson
+date: '2023-03-08'
+slug: []
+categories:
+  - R
+tags: []
+---
+
+This is a test post.
+
+```{r}
+summary(mtcars)
+```
+
+Inline math: $f(x) = \sin(x^2)/x$
+
+$$
+\int d\mu
+$$
