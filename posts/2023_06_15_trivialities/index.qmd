@@ -1,0 +1,12 @@
+---
+title: "An exercise in trivialities I: Distribution functions"
+description: test
+date: "2023-06-15"
+categories:
+  - measure theory
+  - probability theory
+  - analysis
+draft: true
+---
+
+Abc

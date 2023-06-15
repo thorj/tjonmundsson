@@ -2,7 +2,9 @@ project:
   type: website
 
 website:
-  title: "tmp"
+  title: "Thorarinn Jonmundsson"
+  site-url: "https://tjonmundsson.com"
+  description: "Thor's online notebook"
   navbar:
     right:
       - about.qmd
@@ -10,10 +12,12 @@ website:
         href: https://github.com/
       - icon: twitter
         href: https://twitter.com
+  cookie-consent: false
 format:
   html:
-    theme: zephyr
-    css: styles.css
+    theme: 
+      light: theme.scss
+      dark: theme-dark.scss
 execute:
   freeze: auto
 
