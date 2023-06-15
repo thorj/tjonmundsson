@@ -1,6 +1,5 @@
 ---
 title: "About"
-image: profile.jpg
 about:
   template: jolla
   links:
@@ -16,4 +15,4 @@ about:
 
 ---
 
-I like turtles.1
+I'm not interesting.

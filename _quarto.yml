@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "tmp"
+  title: "Thorarinn Jonmundsson"
   navbar:
     right:
       - about.qmd
