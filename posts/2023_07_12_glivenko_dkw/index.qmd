@@ -1,0 +1,85 @@
+---
+title: "The empircal distribution"
+description: We lay the theoretical groundwork for the empirical distribution and examine some of its properties
+date: "2023-07-20"
+categories:
+  - measure theory
+  - probability theory
+  - statistics
+  - nonparametric statistics
+  - concentration inequalities
+  - topology
+draft: true
+bibliography: 2023_07_12_glivenko_dkw.bib
+#csl: nature.csl
+---
+
+## Motivation
+One of the fundamental goals of statistics can be summarized as follows:
+
+> Given observed data $(x_1, \ldots , x_n)$, what can we say about the *process* $\mathcal{G}$, which generated the data, without ever being able to observe the process directly?
+
+The nature of the problem above is what separates statistics from probability theory, at least in some sense. The practitioners of the latter start out knowing the probability triple $(\Omega, \mathcal{F}, P)$, whereas statisticians must make due with the data, and from it, along with some reasonable assumptions about $\Omega$, $\mathcal{F}$, hypothesize about the data generating process $P$.
+
+The reason why $P$ is singled out is because claiming 
+
+we wish to use it to illuminate the properties of some underlying data-generating process, an "entity" we cannot observe directly. More specifically, if $(\Omega, \mathcal{F}, P)$ is a probability space, we can under most circumstances safely assume that $\Omega$ and $\mathcal{F}$ correspond to $\mathbf{R}^n$ and $\mathcal{B}(\mathbf{R}^n)$ respectively, where $n \in \mathbf{N}$ and $\mathcal{B}(\cdot)$ is the Borel $\sigma$-algebra. Thus, the aforementioned data-generating process  As the *push-forward measure* $P_X(\cdot) = P(X^{-1}(\cdot))$ is in 1-1 correspondence to the *distribution* $F_X$, we say that  be the push-forward measure of $P$ under $X$omes from and we assume our data was drawn from the random variable $X$ is a our data $(\omega _1, \ldots , \omega _n)$ is the realization of random variable $X$
+Let  be a probability space. 
+Let $(\Omega, \mathcal{F}, P)$ be a probability space, $X_1, \ldots , X_n$ be an independent random sample from the distribution $F$ and $\varphi (F)$ a functional of $F$. Our goal is to estimate $\varphi (F)$ and examine its properties without making any additional assumptions about our sample or $F$. These constraints put us squarely in the domain of nonparametric statistics, and the purpose of this blog post is to aggregate some fundamental ideas about how to approach a problem of this nature.
+
+## First steps: the empirical distribution function
+Since we have nothing to work with but our sample and $F$, the most natural course of action is to attempt to use the data to shed some light on $F$. This motivates the following definition:
+
+::: {#def-emp}
+## Empirical distribution
+Let $X_1, X_2, \ldots$ be i.i.d. with distribution $F$. The empirical distribution function $\hat{F}_n$ is the function
+$$
+\hat{F}_n(t) := \frac1n \sum ^{n}_{i = 1}\mathbf{1}_{(-\infty, t]}(X_i),
+$$
+where $\omega \in \Omega$, and $\mathbf{1}_A(x) = 1$ if $x \in A$ and $0$ otherwise.
+:::
+
+$\hat{F}_n$ has a couple of interesting properties. First, $P(\{\mathbf{1}_{(-\infty, t]}(X_i) = 1\}) = F(t)$ since
+$$
+\{\omega : \mathbf{1}_{(-\infty, t]}(X_i) = 1\} = \{ \omega : X_i(\omega) \in (-\infty, t]\} = X^{-1}_i ((-\infty, t]),
+$$
+and $(P \circ X^{-1}_i) ((-\infty, t]) = F(t)$. Thus $\mathbf{1}_{(-\infty, t]}(X_i) \sim \text{Bernoulli}(F(t))$ and consequently, $n\hat{F}_n \sim \text{Bin}(n, F(t))$. Since the bias of estimator $\hat{\theta}$ is defined as $E(\hat{\theta}) - \theta$ we see that $\hat{F}_n(t)$ is an unbiased estimator of $F(t)$. 
+
+Second, 
+$$
+E(\hat{F}_n(t) - F(t))^2 = Var(\hat{F}_n(t)) = \frac{F(t)(1 - F(t))}{n} \to 0,
+$$
+as $n \to \infty$. Put into other words, $\hat{F}_n(t)$ converges in the mean to $F(t)$ and so, it also converges in probability to $F(t)$.
+
+## Upgrading the law of large numbers and the appreance of a concentration inequality
+It's possible to improve our stochastic convergence by using the strong law of large numbers (LLN) to show that $\hat{F}_n(t) \to F(t)$ a.s. but amazingly, we can go even further and upgrade to uniform (!!) convergence. Consider the quantity $\sup _x |\hat{F}_n - F|$, which practitioners may know as the [Kolmogorov-Smirnoff statistic](https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test), and the following theorem
+
+::: {#thm-gc}
+## Glivenko-Cantelli
+Let $X_1, \ldots , X_n \sim F$ and let $\hat{F}_n$ be the empirical CDF. Then as $n\to \infty$,
+$$
+\sup _x |\hat{F}_n(x) - F(x)| \to 0 \quad \text{a.s.}
+$$
+:::
+Glivenko-Cantelli (GC) can be considered as a functional version of the LLN, provided that we restrict ourselves to distribution functions, . The "normal" proof of GV is pretty elementary and can be found in most graduate-level textbooks on probability [@durrettProbabilityTheoryExamples2019] or statistics [@vaartAsymptoticStatistics2007]. However, to make things more interesting, I propose we use the Dvoretzky-Kiefer-Wolfowitz (DKW) inequality.
+
+::: {#thm-dkw}
+Let $X_1, \ldots , X_n \sim F$ and let $\hat{F}_n$ be the empirical CDF. Then for all $\varepsilon > 0$
+$$
+P \left(\sup _x |\hat{F}_n(x) - F(x)| > \varepsilon \right) \leq 2e^{-2n\varepsilon ^2 }
+$$
+:::
+
+::: {.proof}
+## Glivenko-Cantelli
+Assume that the DKW-inequality holds and let $\varepsilon > 0$. The series $\sum _n e^{-2n\varepsilon}$ is a convergent series and so $\sum _n P \left(\sup _x |\hat{F}_n(x) - F(x)| > \varepsilon \right)$ is convergent as well. Thus, by the Borell-Cantelli lemma and lemma xxx, we have that $\sup _x |\hat{F}_n(x) - F(x)| > \varepsilon$ a.s.
+:::
+
+The DKW-inequality belongs to the class of concentration inequalities, a hugely important concept in high dimensional probability theory and statistics [@vershyninHighdimensionalProbabilityIntroduction2018a] as they allow us to characterize the behavior of random variables without (necessarily) appealing to asymptotic theory. Case in point, the DKW-inequality implies GC and gives us the rate of convergence. Proving the DKW-inequality is quite involved and thus it is typically stated without proof... a tradition continued here [(those interested can check out this thread on MStack)](https://math.stackexchange.com/questions/1640075/proof-of-the-dkw-inequality).
+
+## Statistical functionals
+Having established that the empirical distribution $\hat{F}_n$ has some nice properties, we turn our attention to the functional $\varphi (F)$. The GC theorem Similar to maximum-likelihood theory, we define the plug-in estimator of $\varphi (F)$ by $\hat{\theta} _n = \varphi (\hat{F}_n)$. Our goal now is to show that $\hat{\theta}_n$ is appropriately "well behaved"
+
+## Selected prerequisites
+
+sdf

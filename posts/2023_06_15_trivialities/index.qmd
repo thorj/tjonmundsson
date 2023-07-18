@@ -1,5 +1,5 @@
 ---
-title: "An exercise in trivialities I: Distribution functions"
+title: "An exercise in trivialities: Distribution functions I"
 description: test
 date: "2023-06-15"
 categories:
@@ -9,4 +9,38 @@ categories:
 draft: true
 ---
 
+Things to write about:
+
+* Stieltjes measure, integrals, and decomposition
+  + Relevant problems from Schilling: 6.1, 14.18, 20.8
+  + Prerequisites: Carathedory existence (6), Push-forward measure (7), Densities (10), Tonelli & Fubini & Distributions (14), Radon-Nikodym (20), Lebesgue decomposition (20.5) 
+  
+* Part 1 should deal with problem 6.1 and push-forward measures. Maybe densities as well.
+
+::: {#exr-stielt1}
+
+## Stieltjes-I
+
+(i) Let $\mu$ be a measure on $(\mathbf{R}, \mathcal{B}(\mathbf{R}))$ such that $\mu[-n, n) < \infty$ for all $n \in \mathbf{N}$. Show that the function $F_{\mu} : \mathbf{R} \to \mathbf{R}$, defined as
+$$
+F_{\mu} (x) := \begin{cases} \mu [0, x) & \text{if} \hskip{0.5em} x > 0, \\ 
+0 & \text{if} \hskip{0.5em} x = 0, \\
+-\mu[x, 0) & \text{if} \hskip{0.5em} x< 0
+\end{cases}
+$$
+is a monotonically increasing and left-continuous function. Such a function is called a *Stieltjes function*.
+
+(ii) Let $F: \mathbf{R} \to \mathbf{R}$ be a Stieltjes function. Show that for all $a, b \in \mathbf{R}$ with $a < b$ that the function
+$$
+\nu _F ([a, b)) := F(b) - F(a),
+$$
+has a unique extension to a measure on $\mathcal{B}(\mathbf{R})$.
+
+(iii) Conclude that for every measure $\mu$ on $(\mathbf{R, \mathcal{B}(\mathbf{R}}))$ satisfying $\mu [-r, r) < \infty$, $r > 0$, there is some Stieltjes function $F = F\mu$ such that $\mu = \nu _F$.
+
+:::
+
+::: {.proof}
 Abc
+
+:::

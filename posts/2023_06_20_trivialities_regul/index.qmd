@@ -1,0 +1,154 @@
+---
+title: "An exercise in trivialities: Regularity of measures"
+description: test
+date: "2023-06-20"
+categories:
+  - measure theory
+  - probability theory
+  - analysis
+draft: true
+---
+
+Things to write about:
+
+* Compact sets in Hausdorff are closed 26.
+* Schilling 4.21 and 4.22
+* Relevance to probability theory and consequently statistics
+
+The following problem can be found in Schilling's *Measures, integrals and Martingales*:
+
+::: {#exr-schill421}
+## Schilling 4.21
+Let $X$ be a metric space and $\mu$ be a finite measure on the Borel sets $\mathcal{B} = \mathcal{B}(X)$. Denote the collection of the open, closed, and compact sets by $\mathcal{O}$, $\mathcal{F}$, and $\mathcal{K}$ respectively. Define a family of sets
+$$
+\Sigma := \{A \subset X : \forall \varepsilon > 0, \exists (U\in \mathcal{O}, F \in \mathcal{F}) \hskip{0.5em} \text{s.t.} \hskip{0.5em} F \subset A \subset O, \mu(U\setminus F) < \varepsilon \}.
+$$
+  (i) Show that if $A \in \Sigma$ then $A^c \in \Sigma$. Also show that $\mathcal{F} \subset \Sigma$.
+  (ii) Show that $\Sigma$ is stable under finite intersections.
+  (iii) Show that $\Sigma$ is a $\sigma$-algebra containing $\mathcal{B}$.
+  (iv) Show that for all $B \in \mathcal{B}$ 
+$$
+\mu (B) = \sup _{F \subset B, F \in \mathcal{F}} \mu(F) = \inf _{O \supset B, U \in \mathcal{O}} \mu(U).
+$$
+  (v) Assume there exists an increasing sequence of compact sets $K_j$ such that $K_j \uparrow X$. Show that $\mu$ satisfies 
+$$
+\mu(B) = \sup _{K \subset B, K \in \mathcal{K}} \mu(K)
+$$
+  (vi) Extend the equality $\mu (B) = \sup _{F \subset B, F \in \mathcal{F}} \mu(F)$ to $\sigma$-finite measures.
+:::
+
+I think this a great problem to solve because it tests if you can has you:
+
+* Demonstrate that a set is an algebra (closed under complements and finite intersections/unions) (i, ii)
+* That furthermore the set is a $\sigma$-algebra that contains the Borel sets, opening the door to the topology induced by the metric of $X$ (iii).
+* Has you work out that measures on metric spaces have the regularity property (iv, v)
+* Extends the results to a $\sigma$-finite measure such as the Lebesgue measure $\lambda$.
+
+::: {.solution}
+### i
+Let $A \in \Sigma$ and $\varepsilon > 0$. Then there exist sets $F\in \mathcal{F}, U \in \mathcal{O}$ such that $F \subset A \subset O$ and $\mu (U \setminus F) < \varepsilon$. Since $F$ is closed, $F^c$ is an open set. Similarly, $U^c$ is a closed set. From elementary set theory we have $O^c \subset A^c \subset F^c$ and the monotone property of measures then gives us
+$$
+\mu(F^c\setminus O^c) = \mu(X\setminus F) - \mu(X\setminus O) = \mu (O \setminus F) < \varepsilon,
+$$
+so $A^c \in \Sigma$. 
+
+Let $F \in \mathcal{F}$. Since $X$ is a metric space, $F$ is a $G_{\delta}$ set and so we can write $F = U := \bigcap _{n \in \mathbf{N}}U_n$ where $U_n = \bigcup _{x \in F}B_d(x, \frac1n)$. As $U_n$ decreases to $U$, the continuity of measures yields that $\lim _{n\to \infty}\mu (U_n/F) = \mu(U/F) = 0$. That is, for all $\varepsilon > 0$ there exists $N \in \mathbf{N}$ such that $\mu(U_n/F) < \varepsilon$ for all $n > N$. As $F \subset F \subset U_n$, we have that $F \in \Sigma$ and, consequently, that $\mathcal{F} \subset \Sigma$.
+:::
+
+::: {.solution}
+## ii
+Let $\{A_1, \ldots, A_n\} \subset \Sigma$ and $\varepsilon > 0$. For each $A_i$ there exist $F_i \in \mathcal{F}, U_i \in \mathcal{O}$ such that $F_i \subset A_i \subset U_i$, and $\mu(U_i \setminus F_i) < \varepsilon/n$. Furthermore, $\bigcap _i ^n F_i \in \mathcal{F}, \bigcap _i^n U_i \in \mathcal{O}$, and $\bigcap _i ^n F_i \subset \bigcap _i ^n A_i \subset \bigcap _i ^n U_i$. Finally, 
+$$
+\bigcap _{i = 1}^n U_i \setminus \bigcap_{i = 1}^n F_i = \bigcap _{i = 1}^n U_i \cap \left( \bigcup _{i = 1} ^n F_i ^c\right) = \bigcup _{i = 1}^n\left( \bigcap_{i = 1} ^nU_i \cap F_i^c\right) \subset \bigcup _{i = 1}^n (U_i\cap F_i^c),
+$$
+so by the monotone property of measures 
+$$
+\mu\left(\bigcap _{i = 1}^n U_i \setminus \bigcap_{i = 1}^n F_i\right) \leq \sum _{i = 1} ^n\mu(U_i\setminus F_i) < \varepsilon.
+$$
+This shows that $\Sigma$ is closed under finite intersections (and unions).
+:::
+
+::: {.solution}
+$X \in \Sigma$ since $X \subset X \subset X$ and $\mu(X \setminus X) = 0 < \varepsilon$ for all $\varepsilon > 0$. This, and (i) and (ii) above, shows that $\Sigma$ is a concrete Boolean algebra. For $\Sigma$ to be a $\sigma$-algebra, all there remains to do is to show that $\Sigma$ is closed under countable unions. Let $\varepsilon > 0$ and $\{A_1, A_2, \ldots \} \subset \Sigma$. For each $A_i$ we have $F_i \in \mathcal{F}$, and $U_i \in \mathcal{O}$, such that $F_i \subset A_i \subset U_i$ and $\mu(U_i\setminus F_i) < \varepsilon 2^{-i}$. Obviously $U =: \bigcup _{i} U_i \in \mathcal{O}$ but $F := \bigcup F_i$ is not necessarily closed. Instead we will show that a finite union $C_n := \bigcup _{i = 1}^n F_i \in \mathcal{F}$ will suffice. Obviously, $C_n \subset \bigcup _i A_i \subset U$ but what can we do about $\mu (U\setminus C_n)$?
+
+First, as $\mu(U\setminus C_1) < \infty$, and $U\setminus C_n$ is a decreasing sequence of sets in $n$ such that
+$$
+U\setminus C_n \downarrow\bigcap _{n = 1} \left(U \setminus C_n\right) = \{x \in U, \hspace{0.25em} x \notin C_n \text{ for all } n\} = \{x \in U, \hspace{0.25em} x \notin \cup _i F_i\} = U\setminus F,
+$$
+we have by the continuity of measures that $\lim _n \mu(U\setminus C_n) = \mu(U\setminus F)$.
+
+Second, since $F_i \subset U_i$ for all $i$, we have in general
+$$
+U \setminus F = \left(\bigcup _{i = 1}U_i\right) \setminus \left(\bigcup _{i = 1}F_i\right) = \bigcup _{j=1}\left( U_j \setminus \bigcup _{i =1}F_i\right) \subset \bigcup _{j=1}\left( U_j \setminus F_j\right).
+$$
+Thus, by the monotone property of measures, $\mu(U\setminus F) \leq \sum _i \mu (U_i\setminus F_i) < \varepsilon$. 
+
+Now, for our $\varepsilon$ there exists $N \in \mathbf{N}$ such that for all $n > N$
+$$
+\mu(U\setminus C_n) = \mu(U\setminus C_n) - \mu(U\setminus F) + \mu(U\setminus F) < 2\varepsilon,
+$$
+which shows $\bigcup _i A_i \in \Sigma$ such that $\Sigma$ closed under countable unions and is a $\sigma$-algebra. Lastly, as $\mathcal{B} = \sigma(\mathcal{F})$ is the smallest $\sigma$-algebra that contains $\mathcal{F}$ and $\mathcal{F} \subset \Sigma$ we have $\mathcal{B} \in \Sigma$. 
+:::
+
+--------
+::: {#thm-met_top}
+Let $(X, d)$ be a metric space. The collection $\mathcal{B}_X := \{B_d(x, \varepsilon): x \in X, \varepsilon > 0\}$, where $B_d(x, \varepsilon) := \{y \in X: d(x, y) < \varepsilon\}$, is a basis for a topology on $X$. We call this topology the *metric topology* induced by $d$.
+:::
+
+::: {#lem-met_top_1}
+If $y \in B_d(x, \varepsilon)$ then there exists $B_d(y, \delta) \in \mathcal{B}_X$ such that $B_d(y, \delta) \subset B_d(x, \varepsilon)$.
+:::
+
+::: {.proof}
+Let $\varepsilon > 0$, $B_d(x, \varepsilon) \in \mathcal{B}_X$, and $y \in B_d(x, \varepsilon)$. Then $d(x, y) < \varepsilon$ so let $\delta = \varepsilon - d(x, y)$. Then for $z \in B_d(y, \delta)$ we have
+$$
+d(x, z) \leq d(x, y) + d(y, z) < d(x, y) + \delta = \varepsilon. 
+$$
+So $z \in B_d(x, \varepsilon)$ and $B_d(y, \delta) \subset B_d(x, \varepsilon)$.
+:::
+
+::: {.proof}
+Let $\varepsilon > 0$ and $x \in X$. Then by definition of $\mathcal{B}_X$ there exists an $\varepsilon$-ball $B_d(x, \varepsilon) \in \mathcal{B}_X$. Assume now that for $x \in X$ there exist $B_1, B_2 \in \mathcal{B}_X$ such that $x \in B_1 \cap B_2$. By the lemma above there exist $\delta_1, \delta_2$ such that $B_d(x, \delta _1) \subset B_1$ and $B_d (x, \delta _2) \subset B_2$. If $\delta = \min \{\delta_1, \delta_2 \}$ then $B_d(x, \delta) \subset B_1 \cap B_2$. Thus, $\mathcal{B}_X$ is a basis for a topology on $X$.
+:::
+
+::: {#def-haus}
+The topological space $(X, \mathcal{T})$ is a *Hausdorff space* if for each $x, y \in X$, $x \neq y$, there exist neighborhoods $U,V$ of $x$ and $y$, respectively, such that $U\cap V = \varnothing$.
+:::
+
+::: {#thm-met_haus}
+Let $X$ be a topological metric space. Then $X$ is Hausdorff.
+:::
+
+::: {.proof}
+Let $x,y$ be distinct elements of $X$. Then $d(x, y) >0$. If $\epsilon = \frac12 d(x, y)$ then $B_d(x, \varepsilon) \cap B_d(y, \varepsilon) = \varnothing$. Assume $z \in B_d(x, \varepsilon) \cap B_d(y, \varepsilon)$ then $d(x, z) < \varepsilon$, $d(y, z) < \varepsilon$ so that $d(x, z) + d(y, z) < 2\varepsilon = d(x, y)$ which violates the triangle inequality.
+:::
+
+::: {#lem-haus-sub-comp}
+Let $Y$ be a subspace $X$. Then $Y$ is compact if and only if every covering of $Y$ by open sets in $X$ contains a finite sub-collection covering $Y$.
+:::
+
+::: {.proof}
+Assume $Y$ is compact and $\mathcal{A} = \{A_{\lambda}\}_{\lambda \in \Lambda}$ is a covering of $Y$ by open sets in $X$. Then the collection $\{A_{\lambda} \cap Y | \lambda \in \Lambda\}$ is a covering of $Y$ by open sets in $Y$. Since $Y$ is compact there exists a finite sub-collection $\{A_{\lambda_1} \cap Y, \ldots, A_{\lambda _n}\cap Y\}$ which covers $Y$. Consequently, the sub-collection $\{A_{\lambda _1}, \ldots , A_{\lambda _n}\}$ is a sub-collection of $\mathcal{A}$ that covers $Y$.
+
+Assume that the converse holds. Let $\mathcal{A}' = \{A'_{\lambda}\}_{\lambda \in \Lambda}$ be a covering of $Y$ by open sets in $Y$. For each $\lambda$, choose $A_\lambda$ open in $X$ such that $A'_{\lambda} = A_\lambda \cap Y$. Then $\mathcal{A} = \{A_{\lambda}\}_{\lambda \in \Lambda}$ is a covering of $Y$ by open sets in $X$ which admits a finite sub-cover $\{A_{\lambda _1}, \ldots , A_{\lambda _n}\}$ by the assumed hypothesis. Thus, $\{A'_{\lambda _1}, \ldots , A'_{\lambda _n}\}$ is a finite sub-collection of $\mathcal{A}'$ that covers $Y$.
+:::
+
+::: {#thm-met_haus_comp}
+Every compact subspace of a Hausdorff space $X$ is closed.
+:::
+
+::: {.proof}
+Let $Y$ be a compact subspace of $X$ and consider $X \setminus Y$. For $x \in X\setminus Y$ 
+:::
+
+::: {#def-g_delta}
+A subset $A$ of a space $X$ is called a $G_{\delta}$ in $X$ if it equals the intersection of a countable collection of open subsets of $X$.
+:::
+
+::: {#prp-g_delta_closed}
+Let $(X, d)$ be a metric space. Then each closed set $F \subset X$ is a $G_{\delta}$ set.
+:::
+
+::: {.proof}
+Assume that $F \subset X$ is closed and consider the open set $U_n := \bigcup _{x \in F}B_d(x, \frac1n)$. Our claim follows if $F = \bigcap _{n \in \mathbf{N}} U_n$. We have by definition that $F \subset U_n$ for all $n$ so $F \subset \bigcap _{n \in \mathbf{N}}U_n$. Let $x \in \bigcap _{n \in \mathbf{N}} U_n$. Then $x \in U_n$ for all $n \in \mathbf{N}$. By definition, we can find $x_n \in F$ such that $d(x, x_n) < 1/n$. The sequence $(x_n)$ converges to $x$, and as $F$ is closed, it contains all of its limit points. Thus, $x \in F$ and $\bigcap _{n \in \mathbf{N}}U_n \subset F$. 
+:::

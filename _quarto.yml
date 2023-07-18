@@ -8,10 +8,12 @@ website:
   navbar:
     right:
       - about.qmd
+      - text: "{{< ai google-scholar >}}"
+        href: https://scholar.google.com/citations?hl=en&user=1ZqKlIkAAAAJ
+      - icon: linkedin
+        href: https://www.linkedin.com/in/thorarinnj/
       - icon: github
         href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
   cookie-consent: false
 format:
   html:

@@ -3,16 +3,15 @@ title: "About"
 about:
   template: jolla
   links:
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com
+    - text: "{{< ai google-scholar >}} Google Scholar"
+      href: https://scholar.google.com/citations?hl=en&user=1ZqKlIkAAAAJ
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com
+      href: https://www.linkedin.com/in/thorarinnj/
     - icon: github
       text: Github
       href: https://github.com
 
 ---
 
-I'm not interesting.
+This is my personal blog. It was inspired by Gregory Gundersen's post [Why I Keep a Research Blog](https://gregorygundersen.com/blog/2020/01/12/why-research-blog/).
